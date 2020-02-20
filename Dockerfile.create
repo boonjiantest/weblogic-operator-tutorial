@@ -17,7 +17,7 @@ COPY scripts/* ${DOMAIN_HOME}/docker-build-tmp/
 
 COPY target/opdemo.war $DOMAIN_HOME/wlsdeploy/applications/
 
-COPY ${DOMAIN_HOME}/docker-build-tmp/wls-exporter.war $DOMAIN_HOME/wlsdeploy/applications/
+COPY scripts/wls-exporter.war $DOMAIN_HOME/wlsdeploy/applications/
 
 RUN wlst.sh -skipWLSModuleScanning -loadProperties ${DOMAIN_HOME}/docker-build-tmp/datasource.properties \
       ${DOMAIN_HOME}/docker-build-tmp/model.py
